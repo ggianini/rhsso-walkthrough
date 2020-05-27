@@ -1,6 +1,6 @@
 {
     "realm" : "demo",
-    "auth-server-url" : "http://sso:8443/auth",
+    "auth-server-url" : "https://sso-sso-demo.apps.cluster-brasilia-65f9.brasilia-65f9.example.opentlc.com/auth",
     "ssl-required" : "external",
     "resource" : "js-console",
     "public-client" : true
