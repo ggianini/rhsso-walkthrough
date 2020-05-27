@@ -1,3 +1,5 @@
-FROM httpd:2.4
-RUN echo "ServerName localhost" >> /usr/local/apache2/conf/httpd.conf
-COPY ./source /usr/local/apache2/htdocs/
+FROM registry.access.redhat.com/rhscl/php-70-rhel7
+
+COPY ./source /opt/app-root/src/
+
+CMD ["container-entrypoint", "/usr/libexec/s2i/run"]
