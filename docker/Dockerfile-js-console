@@ -1,5 +1,12 @@
 FROM registry.access.redhat.com/rhscl/php-70-rhel7
 
+USER root
+
+COPY docker/run /usr/libexec/s2i/run
 COPY ./source /opt/app-root/src/
+
+RUN chmod +x /usr/libexec/s2i/run && chmod -R 777 /opt/app-root/src/
+
+USER 1001
 
 CMD ["container-entrypoint", "/usr/libexec/s2i/run"]
