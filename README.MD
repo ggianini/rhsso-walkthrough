@@ -4,11 +4,11 @@
 
 This demo showcase a step-by-step guide covering basic capabilities from [Red Hat Single Sign ON](https://access.redhat.com/products/red-hat-single-sign-on) using a simple application js-console.
 
-![](imgs/2020-05-27-15-00-27.png)
+![](docs/images/2020-05-27-15-00-27.png)
 
 js-console and Red Hat SSO running on Openshift.
 
-![](imgs/2020-05-27-14-58-55.png)
+![](docs/images/2020-05-27-14-58-55.png)
 
 ## For instructor only
 
@@ -16,7 +16,7 @@ js-console and Red Hat SSO running on Openshift.
 
 If you want to use it on RHPDS, create a new Openshift environment using OCP 4.4.
 
-![](imgs/2020-05-27-09-34-46.png)
+![](docs/images/2020-05-27-09-34-46.png)
 
 #### User Projects
 
