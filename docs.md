@@ -4,11 +4,11 @@
 
 This demo showcase a step-by-step guide covering basic capabilities from [Red Hat Single Sign ON](https://access.redhat.com/products/red-hat-single-sign-on) using a simple application js-console.
 
-![](imgs/2020-05-27-15-00-27.png)
+![](docs/images/2020-05-27-15-00-27.png)
 
 js-console and Red Hat SSO running on Openshift.
 
-![](imgs/2020-05-27-14-58-55.png)
+![](docs/images/2020-05-27-14-58-55.png)
 
 ## For instructor only
 
@@ -16,7 +16,7 @@ js-console and Red Hat SSO running on Openshift.
 
 If you want to use it on RHPDS, create a new Openshift environment using OCP 4.4.
 
-![](imgs/2020-05-27-09-34-46.png)
+![](docs/images/2020-05-27-09-34-46.png)
 
 #### User Projects
 
@@ -99,49 +99,49 @@ First, we need to login on Openshift.
 * Username: user`XX` (where XX is your specific number)
 * Password: `openshift`
 
-![](imgs/2020-05-27-17-41-42.png)
+![](docs/images/2020-05-27-17-41-42.png)
 
 Make sure you are in the `Developer perspective` and in the namespace sso`XX`.
 
-![](imgs/2020-05-27-17-43-31.png)
+![](docs/images/2020-05-27-17-43-31.png)
 
 ###### Deploy SSO
 
 * Click on `+Add` -> `From Catalog`
-![](imgs/2020-05-27-17-45-54.png)
+![](docs/images/2020-05-27-17-45-54.png)
 * Search for `sso` in the filter field and select `Red Hat Single Sign-On 7.3 (Ephemeral)`
-![](imgs/2020-05-27-17-55-58.png)
+![](docs/images/2020-05-27-17-55-58.png)
 * Click on `Instantiatee Template`
-![](imgs/2020-05-27-17-56-28.png)
+![](docs/images/2020-05-27-17-56-28.png)
 * Leave the fields as they are and just change both `RH-SSO Administrator Username` and `RH-SSO Administrator Password` to `admin`
-![](imgs/2020-05-27-17-57-10.png)
+![](docs/images/2020-05-27-17-57-10.png)
 * Wait while Openshift pull the necessary images for Red Hat SSO. When it has finished, you'll see the following screen
-![](imgs/2020-05-27-17-58-50.png)
+![](docs/images/2020-05-27-17-58-50.png)
 
 ###### Deploy js-console
 
 * On the left menu, click on `+Add` -> `Container Image`
-![](imgs/2020-05-27-18-00-20.png)
+![](docs/images/2020-05-27-18-00-20.png)
 * Use `docker.io/luszczynski/rhsso-js-console-app:1.0` in the `Image name from external registry` field
 * Application Name: `redhat-sso`
 * Name: `js-console`
-![](imgs/2020-05-27-18-03-23.png)
+![](docs/images/2020-05-27-18-03-23.png)
 * Now click on `Create`
 * Click on the SSO circle and then on the resources tab, copy the Route URL
-![](imgs/2020-05-27-18-07-42.png)
+![](docs/images/2020-05-27-18-07-42.png)
 * Open the js-console Deployment by clicking on `js-console`
-![](imgs/2020-05-27-18-09-38.png)
+![](docs/images/2020-05-27-18-09-38.png)
 * Now select the `Environment` tab and create a new env `AUTH_SERVER_URL` and fill the value field with the content of the URL of SSO. In the end of the SSO URL, add `/auth`. Now click on `Save`
-![](imgs/2020-05-27-18-12-51.png)
+![](docs/images/2020-05-27-18-12-51.png)
 * Switch back to the topology view and Open the js-console app by clicking on the icon
-![](imgs/2020-05-27-18-14-57.png)
+![](docs/images/2020-05-27-18-14-57.png)
 
 ###### Grouping js-console and SSO
 
 * While holding down `Shift`, drag the SSO circle near to the js-console
-![](imgs/May-27-2020-18-15-58.gif)
+![](docs/images/May-27-2020-18-15-58.gif)
 * Now create a connection between js-console and sso by pulling an arrow from js-console towards sso circle
-![](imgs/May-27-2020-18-20-04.gif)
+![](docs/images/May-27-2020-18-20-04.gif)
 
 ###### Using the CLI
 
@@ -186,14 +186,14 @@ When you boot Red Hat Single Sign-On for the first time Red Hat Single Sign-On c
 We recommend that you do not use the master realm to manage the users and applications in your organization. Reserve use of the master realm for super admins to create and manage the realms in your system. Following this security model helps prevent accidental changes and follows the tradition of permitting user accounts access to only those privileges and powers necessary for the successful completion of their current task.
 
 * From now on, save the SSO URL. You will use it in all labs. To find this URL, click on the `Open URL` icon
-![](imgs/2020-05-28-07-50-20.png)
+![](docs/images/2020-05-28-07-50-20.png)
 * Repeat the step above to `js-console` application. You will also need this URL for the next labs.
-![](imgs/2020-05-28-07-53-33.png)
+![](docs/images/2020-05-28-07-53-33.png)
 * Go to the **Red Hat Single Sign On** browser tab and place the mouse on the left top corner, right above the *Master*. Click on the arrow button and select **Add Realm**
-![](imgs/2020-05-27-15-15-17.png)
+![](docs/images/2020-05-27-15-15-17.png)
 * In the *name* textfield use: *demo*
 * Click on *Create* button
-![](imgs/2020-05-27-15-15-58.png)
+![](docs/images/2020-05-27-15-15-58.png)
 
 ##### Realm Reference
 
@@ -208,11 +208,11 @@ Clients are entities that can request Red Hat Single Sign-On to authenticate a u
 
 * Click on *Clients* right bellow the *Realm Settings* at the left menu
 * Click on *Create* button on the right corner
-![](imgs/2020-05-27-15-17-10.png)
+![](docs/images/2020-05-27-15-17-10.png)
 * On the *Client ID* textfield, use: *js-console*
 * Inform the *Root URL*: Paste the URL from **js-console** that you generate on [Lab 2](#2-create-rhsso-realm)
 * Click on **Save** button
-![](imgs/2020-05-27-15-27-09.png)
+![](docs/images/2020-05-27-15-27-09.png)
 
 ##### Client Reference
 
@@ -226,24 +226,24 @@ Roles identify a type or category of user. Admin, user, manager, and employee ar
 
 * Click on **Roles** right bellow the **Client Templates** at the left menu;
 * Click on *Add Role* button
-![](imgs/2020-05-27-15-29-33.png)
+![](docs/images/2020-05-27-15-29-33.png)
 * For the *Role Name* inform `realm-role` as value and click on **Save** button afterward
-![](imgs/2020-05-27-15-30-31.png)
+![](docs/images/2020-05-27-15-30-31.png)
 * Click on **Clients** right bellow the **Realm Settings** at the left menu
 * Select **js-console** and **Roles** afterward
-![](imgs/2020-05-27-15-31-30.png)
-![](imgs/2020-05-27-15-32-00.png)
+![](docs/images/2020-05-27-15-31-30.png)
+![](docs/images/2020-05-27-15-32-00.png)
 * Click on **Add Role** button
-![](imgs/2020-05-27-15-32-32.png)
+![](docs/images/2020-05-27-15-32-32.png)
 * For the *Role Name* inform `client-role` and afterwards **Save** button
-![](imgs/2020-05-27-15-33-05.png)
+![](docs/images/2020-05-27-15-33-05.png)
 * Click on **Roles** again;
 * Select *Default Roles;*
-![](imgs/2020-05-27-15-33-49.png)
+![](docs/images/2020-05-27-15-33-49.png)
 * Select `realm-role` from *Available Roles* list and click on **Add Selected**
-![](imgs/2020-05-27-15-34-38.png)
+![](docs/images/2020-05-27-15-34-38.png)
 * In the *Client Roles* select **js-console** and click on **Add Selected**
-![](imgs/2020-05-27-15-35-42.png)
+![](docs/images/2020-05-27-15-35-42.png)
 
 ##### Roles Reference
 
@@ -257,21 +257,21 @@ Users are entities that are able to log into your system. They can have attribut
 
 * Click on **Users** right bellow the **Groups** at the left menu;
 * Click on *Add User* button;
-![](imgs/2020-05-27-15-36-57.png)
+![](docs/images/2020-05-27-15-36-57.png)
 * Inform the *Username* `myuser` and click on **Save** button;
-![](imgs/2020-05-27-15-38-27.png)
+![](docs/images/2020-05-27-15-38-27.png)
 * Go to *Credentials* tab and inform the password `mypass`;
 * Change *Temporary* to **OFF**;
 * Finally click on **Reset Password**;
-![](imgs/2020-05-27-15-39-36.png)
+![](docs/images/2020-05-27-15-39-36.png)
 * Switch back to **JS Console** tab and click on **Login**
-![](imgs/2020-05-27-15-41-32.png)
+![](docs/images/2020-05-27-15-41-32.png)
 * The **Red Hat Single Sign On** login page will be displayed. Inform the credentials from the user you've created on previous step;
   * user: `myuser`
   * pass: `mypass`
-![](imgs/2020-05-27-15-42-49.png)
+![](docs/images/2020-05-27-15-42-49.png)
 * If everything is properly configured, after a successfully login you will be redirected to the **JS Console App**. Please notice the **Init Success (Authenticated)** right below the *Result* label;
-![](imgs/2020-05-27-15-43-31.png)
+![](docs/images/2020-05-27-15-43-31.png)
 * Considering exploring all buttons (Get Profile, Get User Info, Show Token) to familiarize yourself with *OpenID/OAuth* standards;
 
 ##### Users Reference
@@ -285,16 +285,16 @@ Users are entities that are able to log into your system. They can have attribut
 Authentication flows are work flows a user must perform when interacting with certain aspects of the system. A login flow can define what credential types are required. A registration flow defines what profile information a user must enter and whether something like reCAPTCHA must be used to filter out bots. Credential reset flow defines what actions a user must do before they can reset their password.
 
 * Go back to **JS Console** browser tab and click on **Logout**
-![](imgs/2020-05-27-15-44-40.png)
+![](docs/images/2020-05-27-15-44-40.png)
 * Switch back to **Red Hat Single Sign On** and click on **Realm Settings** right bellow the **Realm Name (Demo)** and select *Login;*
 * Enable *User Registration*
 * Click on **Save**
-![](imgs/2020-05-27-15-46-25.png)
+![](docs/images/2020-05-27-15-46-25.png)
 * On **JS Console** browser tab click on **Login** button;
-![](imgs/2020-05-27-15-41-32.png)
+![](docs/images/2020-05-27-15-41-32.png)
 * Click on **Register** and create a new user informing all required fields;
-![](imgs/2020-05-27-15-48-00.png)
-![](imgs/2020-05-27-15-49-00.png)
+![](docs/images/2020-05-27-15-48-00.png)
+![](docs/images/2020-05-27-15-49-00.png)
 * if you experience session issues with other users, considering open a new browser instance or an incognito tab;
 
 ##### Authentication Reference
@@ -308,15 +308,15 @@ Authentication flows are work flows a user must perform when interacting with ce
 Every screen provided by Red Hat Single Sign-On is backed by a theme. Themes define HTML templates and stylesheets which you can override as needed.
 
 * Go to **JS Console** browser tab and click on **Logout;**
-![](imgs/2020-05-27-15-44-40.png)
+![](docs/images/2020-05-27-15-44-40.png)
 * On **Red Hat Single Sign On** browser tab, click **Realm Settings** and select **Themes** tab;
 * Select theme `keycloak` from **Login Theme** dropdown list;
 * Click on **Save;**
-![](imgs/2020-05-27-15-54-25.png)
+![](docs/images/2020-05-27-15-54-25.png)
 * Go back to **JS Console** browser tab and click on **Login;**
-![](imgs/2020-05-27-15-41-32.png)
+![](docs/images/2020-05-27-15-41-32.png)
 * Notice  a different look'n'feel from **Red Hat Single Sign On** login page;
-![](imgs/2020-05-27-15-54-49.png)
+![](docs/images/2020-05-27-15-54-49.png)
 
 ##### Themes Reference
 
@@ -331,12 +331,12 @@ Required Actions are tasks that a user must finish before they are allowed to lo
 * Click on **Users** right bellow the **Groups** at the left menu;
 * Click on *View all users* button and select one;
 * Select an user by clicking on *Edit*;
-![](imgs/2020-05-27-16-47-02.png)
+![](docs/images/2020-05-27-16-47-02.png)
 * Select `Update Password` action on **Required User Actions** menu;
 * Click on **Save**
-![](imgs/2020-05-27-16-49-28.png)
+![](docs/images/2020-05-27-16-49-28.png)
 * Try to login with this user and now you'll have to execute the *Required Actions* previously configured;
-![](imgs/2020-05-27-16-50-18.png)
+![](docs/images/2020-05-27-16-50-18.png)
 
 ##### Required Actions Reference
 
@@ -349,33 +349,33 @@ Required Actions are tasks that a user must finish before they are allowed to lo
 Enable login with Google, GitHub, Facebook, Twitter, and other social networks.
 
 * Go to **JS Console** browser tab and click on **Logout;**
-![](imgs/2020-05-27-15-44-40.png)
+![](docs/images/2020-05-27-15-44-40.png)
 * On **Red Hat Single Sign On** browser tab, click on **Identity Providers** right bellow the **Roles** at the left menu;
 * Select *Github*;
-![](imgs/2020-05-27-16-59-14.png)
+![](docs/images/2020-05-27-16-59-14.png)
 * Now copy the redirect URI
-![](imgs/2020-05-27-17-00-24.png)
+![](docs/images/2020-05-27-17-00-24.png)
 * Open a new tab and access your *Github* account.
   * Select **Settings** 
-![](imgs/2020-05-27-17-02-53.png)
+![](docs/images/2020-05-27-17-02-53.png)
   * Now go to **Developer Settings** 
-![](imgs/2020-05-27-17-04-55.png)
+![](docs/images/2020-05-27-17-04-55.png)
   * Select **OAuth Apps** and finally click on: **Register a new application**
-![](imgs/2020-05-27-17-05-58.png)
+![](docs/images/2020-05-27-17-05-58.png)
 * For *Application name* use `sso`
 * *Homepage URL* use `http://localhost`
 * *Redirect URI* Copy from **Red Hat Single Sign On** browser tab and paste it on **CallBack URL**
 * Click on **Register Application**
-![](imgs/2020-05-27-17-09-12.png)
+![](docs/images/2020-05-27-17-09-12.png)
 * Copy both **Client ID** and **Client Secret** from *Github* and paste them on *RHSSO*
-![](imgs/2020-05-27-17-10-55.png)
-![](imgs/2020-05-27-17-12-23.png)
+![](docs/images/2020-05-27-17-10-55.png)
+![](docs/images/2020-05-27-17-12-23.png)
 * Click on **Save**
 * Go back to **JS Console** browser tab and click on **Login;**
-![](imgs/2020-05-27-15-41-32.png)
+![](docs/images/2020-05-27-15-41-32.png)
 * Notice that now you have the option to login with *Github*;
-![](imgs/2020-05-27-17-13-13.png)
-![](imgs/2020-05-27-17-13-37.png)
+![](docs/images/2020-05-27-17-13-13.png)
+![](docs/images/2020-05-27-17-13-37.png)
 
 ##### Social Login Reference
 
@@ -390,14 +390,14 @@ Red Hat Single Sign-On has a number of policies you can set up for your FreeOTP 
 There are two different algorithms to choose from for your OTP generators. Time Based (TOTP) and Counter Based (HOTP). For TOTP, your token generator will hash the current time and a shared secret. The server validates the OTP by comparing all the hashes within a certain window of time to the submitted value. So, TOTPs are valid only for a short window of time (usually 30 seconds). For HOTP a shared counter is used instead of the current time. The server increments the counter with each successful OTP login. So, valid OTPs only change after a successful login.
 
 * On **JS Console** browser tab, click on **Logout;**
-![](imgs/2020-05-27-15-44-40.png)
+![](docs/images/2020-05-27-15-44-40.png)
 * On **Red Hat Single Sign On** browser tab, click on **Authentication** right bellow the **User Federation** at the left menu;
 * Change the default *OTP FORM* from **OPTIONAL** to **REQUIRED**;
-![](imgs/2020-05-27-17-22-05.png)
+![](docs/images/2020-05-27-17-22-05.png)
 * Go back to **JS Console App (http://localhost:80)** and click on **Login;**
-![](imgs/2020-05-27-15-41-32.png)
+![](docs/images/2020-05-27-15-41-32.png)
   * Consider installing *FreeOTP* or *Google Authenticator* and configure the authentication by scanning the provided *QR Code*;
-![](imgs/2020-05-27-17-24-02.png)
+![](docs/images/2020-05-27-17-24-02.png)
 
 ##### OTP Reference
 
@@ -411,7 +411,7 @@ Red Hat Single Sign-On has a built-in User Account Service which every user has 
 
 * On **Red Hat Single Sign On** browser tab, click on **Clients** right bellow the **Realm Settings** at the left menu;
 * Now click on the Account Base URL link
-![](imgs/2020-05-27-17-30-08.png)
+![](docs/images/2020-05-27-17-30-08.png)
 * Navigate through the options and update your profile if desired;
 
 ##### Account Management Reference
