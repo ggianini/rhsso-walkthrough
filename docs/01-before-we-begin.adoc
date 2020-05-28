@@ -1,0 +1,15 @@
+= Before we begin
+:imagesdir: imgs
+:toc:
+:toc-title: Content
+:linkattrs:
+
+== Instructions
+
+During the labs, you will need the Openshift and Etherpad URL:
+
+* The instructor must provide these URLs
+
+Save the Openshift and Etherpad URL as you are going to need them in the labs.
+
+A number will be assign to your user. On the next labs, everytime you see `userXX` replace `XX` with your number.

@@ -1,0 +1,41 @@
+config:
+  renderer: asciidoc
+
+modules:
+  01-before-we-begin:
+    name: "Before we begin"
+    vars: 
+    requires:
+  02-starting-rhsso-and-js-console:
+    name: "Creating and starting RHSSO and js-console App"
+    vars: 
+    exit_sign: Próximo
+  03-create-rhsso-realm:
+    name: "Create RHSSO Realm"
+    vars: 
+  04-create-rhsso-client-app:
+    name: "Create RHSSO Client App"
+    vars: 
+  05-create-rhsso-roles:
+    name: "Create RHSSO Roles"
+    vars: 
+  06-create-rhsso-user:
+    name: "Create RHSSO User"
+    vars: 
+  07-enable-signup:
+    name: "Enable SignUp"
+    vars: 
+  08-change-themes:
+    name: "Change Themes"
+  09-user-required-actions:
+    name: "User Required Actions"
+    vars: 
+  10-social-login:
+    name: "Social Login"
+    vars: 
+  11-two-factor-with-otp:
+    name: "Two-Factor With OTP"
+    vars: 
+  12-end-user-account-management:
+    name: "Account Management"
+    vars: 

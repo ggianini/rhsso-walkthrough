@@ -1,0 +1,112 @@
+= Creating and starting RHSSO and js-console App
+:imagesdir: images
+:toc:
+:toc-title: Content
+:linkattrs:
+
+You can run Red Hat SSO locally or using containers on Openshift. Choose one of the option below.
+
+== Option 1: Locally
+
+* Execute *docker pull* to download both **Red Hat Single Sign On** and **JS Console:**
+
+----
+  docker pull viniciusmartinez/rhsso73:1.0
+  docker pull luszczynski/sso-console-app:1.0
+----
+
+* Bootstrap both **Red Hat Single Sign ON** and **JS Console:**
+
+----
+  docker run -it -p 8080:8080 viniciusmartinez/rhsso73:1.0
+  docker run -it -p 80:80 luszczynski/sso-console-app:1.0
+----
+
+* if you modify **Red Hat Single Sign On** default port don't forget to update *keycloak.json;*
+* Open a browser of your choice and try to access **Red Hat Single Sign On** on the following address with *admin/admin* credentials: http://localhost:8080/auth
+* Open a new tab and try to access **JS Console** on the following address: http://localhost:80
+
+== Option 2: Openshift (Recommended)
+
+First, we need to login on Openshift.
+
+* Username: userXX (where XX is your specific number)
+* Password: `openshift`
+
+image:2020-05-27-17-41-42.png[image]
+
+Make sure you are in the `Developer perspective` and in the namespace sso`XX`.
+
+image:2020-05-27-17-43-31.png[]
+
+=== Deploy SSO
+
+* Click on `+Add` -> `From Catalog`
+image:2020-05-27-17-45-54.png[]
+* Search for `sso` in the filter field and select `Red Hat Single Sign-On 7.3 (Ephemeral)`
+image:2020-05-27-17-55-58.png[]
+* Click on `Instantiatee Template`
+image:2020-05-27-17-56-28.png[]
+* Leave the fields as they are and just change both `RH-SSO Administrator Username` and `RH-SSO Administrator Password` to `admin`
+image:2020-05-27-17-57-10.png[]
+* Wait while Openshift pull the necessary images for Red Hat SSO. When it has finished, you'll see the following screen
+image:2020-05-27-17-58-50.png[]
+
+=== Deploy js-console
+
+* On the left menu, click on `+Add` -> `Container Image`
+image:2020-05-27-18-00-20.png[]
+* Use `docker.io/luszczynski/rhsso-js-console-app:1.0` in the `Image name from external registry` field
+* Application Name: `redhat-sso`
+* Name: `js-console`
+image:2020-05-27-18-03-23.png[]
+* Now click on `Create`
+* Click on the SSO circle and then on the resources tab, copy the Route URL
+image:2020-05-27-18-07-42.png[]
+* Open the js-console Deployment by clicking on `js-console`
+image:2020-05-27-18-09-38.png[]
+* Now select the `Environment` tab and create a new env `AUTH_SERVER_URL` and fill the value field with the content of the URL of SSO. In the end of the SSO URL, add `/auth`. Now click on `Save`
+image:2020-05-27-18-12-51.png[]
+* Switch back to the topology view and Open the js-console app by clicking on the icon
+image:2020-05-27-18-14-57.png[]
+
+=== Grouping js-console and SSO
+
+* While holding down `Shift`, drag the SSO circle near to the js-console
+image:May-27-2020-18-15-58.gif[]
+* Now create a connection between js-console and sso by pulling an arrow from js-console towards sso circle
+image:May-27-2020-18-20-04.gif[]
+
+=== Using the CLI
+
+All steps that were executed above, could be done using the following commands
+
+NOTE: You should execute the commands below only if you skipped all steps from [lab 1](#1-starting-rhsso-and-js-console-app)
+
+
+[source,bash]
+----
+userNumber=1
+
+oc new-app \
+    --template=sso73-x509-https \
+    -p APPLICATION_NAME=sso \
+    -p SSO_ADMIN_USERNAME=admin \
+    -p SSO_ADMIN_PASSWORD=admin \
+    -n sso${userNumber}
+
+  ROUTE_PATH=https://$(oc get --no-headers route sso -o jsonpath='{.spec.host}' -n sso${userNumber})/auth
+
+  oc new-app \
+    docker.io/luszczynski/rhsso-js-console-app:1.0 \
+    AUTH_SERVER_URL=$ROUTE_PATH \
+    --name=js-console \
+    -n sso${userNumber}
+
+  oc expose svc js-console -n sso${userNumber}
+
+  oc label dc js-console app.kubernetes.io/part-of="redhat-sso" -n sso${userNumber}
+  oc label dc sso app.kubernetes.io/part-of="redhat-sso" -n sso${userNumber}
+  oc annotate svc js-console app.openshift.io/connects-to=sso73-x509-https -n sso${userNumber}
+  oc annotate dc js-console app.openshift.io/connects-to=sso73-x509-https -n sso${userNumber}
+----

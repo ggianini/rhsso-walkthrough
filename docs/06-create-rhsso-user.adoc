@@ -1,0 +1,34 @@
+= Create RHSSO User
+:imagesdir: images
+:toc:
+:toc-title: Content
+:linkattrs:
+
+== Intro to Users
+
+Users are entities that are able to log into your system. They can have attributes associated with themselves like email, username, address, phone number, and birth day. They can be assigned group membership and have specific roles assigned to them.
+
+== Lab
+
+* Click on **Users** right bellow the **Groups** at the left menu;
+* Click on *Add User* button;
+image:2020-05-27-15-36-57.png[]
+* Inform the *Username* `myuser` and click on **Save** button;
+image:2020-05-27-15-38-27.png[]
+* Go to *Credentials* tab and inform the password `mypass`;
+* Change *Temporary* to **OFF**;
+* Finally click on **Reset Password**;
+image:2020-05-27-15-39-36.png[]
+* Switch back to **JS Console** tab and click on **Login**
+image:2020-05-27-15-41-32.png[]
+* The **Red Hat Single Sign On** login page will be displayed. Inform the credentials from the user you've created on previous step;
+  * user: `myuser`
+  * pass: `mypass`
+image:2020-05-27-15-42-49.png[]
+* If everything is properly configured, after a successfully login you will be redirected to the **JS Console App**. Please notice the **Init Success (Authenticated)** right below the *Result* label;
+image:2020-05-27-15-43-31.png[]
+* Considering exploring all buttons (Get Profile, Get User Info, Show Token) to familiarize yourself with *OpenID/OAuth* standards;
+
+== Users Reference
+
+* https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.4/html-single/server_administration_guide/index#user_management

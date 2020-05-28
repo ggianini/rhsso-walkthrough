@@ -1,0 +1,30 @@
+= Create RHSSO Realm
+:imagesdir: images
+:toc:
+:toc-title: Content
+:linkattrs:
+
+== Intro do Realms
+
+A realm manages a set of users, credentials, roles, and groups. A user belongs to and logs into a realm. Realms are isolated from one another and can only manage and authenticate the users that they control.
+
+When you boot Red Hat Single Sign-On for the first time Red Hat Single Sign-On creates a pre-defined realm for you. This initial realm is the master realm. It is the highest level in the hierarchy of realms. Admin accounts in this realm have permissions to view and manage any other realm created on the server instance. When you define your initial admin account, you create an account in the master realm. Your initial login to the admin console will also be via the master realm.
+
+We recommend that you do not use the master realm to manage the users and applications in your organization. Reserve use of the master realm for super admins to create and manage the realms in your system. Following this security model helps prevent accidental changes and follows the tradition of permitting user accounts access to only those privileges and powers necessary for the successful completion of their current task.
+
+== Lab
+
+* From now on, save the SSO URL. You will use it in all labs. To find this URL, click on the `Open URL` icon
+image:2020-05-28-07-50-20.png[]
+* Repeat the step above to `js-console` application. You will also need this URL for the next labs.
+image:2020-05-28-07-53-33.png[]
+* Go to the **Red Hat Single Sign On** browser tab and place the mouse on the left top corner, right above the *Master*. Click on the arrow button and select **Add Realm**
+image:2020-05-27-15-15-17.png[]
+* In the *name* textfield use: *demo*
+* Click on *Create* button
+image:2020-05-27-15-15-58.png[]
+
+== Realm Reference
+
+* https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.4/html-single/server_administration_guide/index#the_master_realm
+* https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.4/html-single/server_administration_guide/index#create-realm

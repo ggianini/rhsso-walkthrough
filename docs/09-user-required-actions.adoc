@@ -1,0 +1,25 @@
+= User Required Actions
+:imagesdir: images
+:toc:
+:toc-title: Content
+:linkattrs:
+
+== Intro to Required Actions
+
+Required Actions are tasks that a user must finish before they are allowed to log in. A user must provide their credentials before required actions are executed. Once a required action is completed, the user will not have to perform the action again.
+
+== Lab
+
+* Click on **Users** right bellow the **Groups** at the left menu;
+* Click on *View all users* button and select one;
+* Select an user by clicking on *Edit*;
+image:2020-05-27-16-47-02.png[]
+* Select `Update Password` action on **Required User Actions** menu;
+* Click on **Save**
+image:2020-05-27-16-49-28.png[]
+* Try to login with this user and now you'll have to execute the *Required Actions* previously configured;
+image:2020-05-27-16-50-18.png[]
+
+== Required Actions Reference
+
+* https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.4/html-single/server_administration_guide/index#required_actions

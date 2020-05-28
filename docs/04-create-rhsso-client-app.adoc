@@ -1,0 +1,23 @@
+= Create RHSSO Client App
+:imagesdir: images
+:toc:
+:toc-title: Content
+:linkattrs:
+
+== Intro to Client
+
+Clients are entities that can request Red Hat Single Sign-On to authenticate a user. Most often, clients are applications and services that want to use Red Hat Single Sign-On to secure themselves and provide a single sign-on solution. Clients can also be entities that just want to request identity information or an access token so that they can securely invoke other services on the network that are secured by Red Hat Single Sign-On.
+
+== Lab
+
+* Click on *Clients* right bellow the *Realm Settings* at the left menu
+* Click on *Create* button on the right corner
+image:2020-05-27-15-17-10.png[]
+* On the *Client ID* textfield, use: *js-console*
+* Inform the *Root URL*: Paste the URL from **js-console** that you generate on [Lab 2](#2-create-rhsso-realm)
+* Click on **Save** button
+image:2020-05-27-15-27-09.png[]
+
+== Client Reference
+
+* https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.4/html-single/server_administration_guide/index#clients

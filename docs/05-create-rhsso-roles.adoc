@@ -1,0 +1,36 @@
+= Create RHSSO Roles
+:imagesdir: images
+:toc:
+:toc-title: Content
+:linkattrs:
+
+== Intro do Roles
+
+Roles identify a type or category of user. Admin, user, manager, and employee are all typical roles that may exist in an organization. Applications often assign access and permissions to specific roles rather than individual users as dealing with users can be too fine grained and hard to manage.
+
+== Lab
+
+* Click on **Roles** right bellow the **Client Templates** at the left menu;
+* Click on *Add Role* button
+image:2020-05-27-15-29-33.png[]
+* For the *Role Name* inform `realm-role` as value and click on **Save** button afterward
+image:2020-05-27-15-30-31.png[]
+* Click on **Clients** right bellow the **Realm Settings** at the left menu
+* Select **js-console** and **Roles** afterward
+image:2020-05-27-15-31-30.png[]
+image:2020-05-27-15-32-00.png[]
+* Click on **Add Role** button
+image:2020-05-27-15-32-32.png[]
+* For the *Role Name* inform `client-role` and afterwards **Save** button
+image:2020-05-27-15-33-05.png[]
+* Click on **Roles** again;
+* Select *Default Roles;*
+image:2020-05-27-15-33-49.png[]
+* Select `realm-role` from *Available Roles* list and click on **Add Selected**
+image:2020-05-27-15-34-38.png[]
+* In the *Client Roles* select **js-console** and click on **Add Selected**
+image:2020-05-27-15-35-42.png[]
+
+== Roles Reference
+
+* https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.4/html-single/server_administration_guide/index#roles

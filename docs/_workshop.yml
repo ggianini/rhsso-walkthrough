@@ -1,0 +1,31 @@
+id: "rhsso"
+name: "Red Hat Single Sign-On Workshop"
+
+content:
+  url: https://raw.githubusercontent.com/luszczynski/rhsso-walkthrough/master/docs
+
+vars:
+  ETHERPAD_URL: "https://my-etherpad.com"
+  TERMINAL_URL: "http://my-terminal"
+  OPENSHIFT_WILDCARD_URL: ""
+  OPENSHIFT_MASTER_URL: "https://master.brasilia-8694.open.redhat.com/"
+  OPENSHIFT_API_URL: "https://api.cluster-brasilia-d6ec.brasilia-d6ec.example.opentlc.com:6443"
+  OPENSHIFT_DOCS_BASE: ""
+  OPENSHIFT_USERNAME: "developer"
+  OPENSHIFT_PASSWORD: "password"
+  USER: ""
+
+modules:
+  activate:
+  - 01-before-we-begin
+  - 02-starting-rhsso-and-js-console
+  - 03-create-rhsso-realm
+  - 04-create-rhsso-client-app
+  - 05-create-rhsso-roles
+  - 06-create-rhsso-user
+  - 07-enable-signup
+  - 08-change-themes
+  - 09-user-required-actions
+  - 10-social-login
+  - 11-two-factor-with-otp
+  - 12-end-user-account-management

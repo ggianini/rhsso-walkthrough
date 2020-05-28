@@ -1,0 +1,28 @@
+= Enable Signup
+:imagesdir: images
+:toc:
+:toc-title: Content
+:linkattrs:
+
+== Intro to Authentication Flows
+
+Authentication flows are work flows a user must perform when interacting with certain aspects of the system. A login flow can define what credential types are required. A registration flow defines what profile information a user must enter and whether something like reCAPTCHA must be used to filter out bots. Credential reset flow defines what actions a user must do before they can reset their password.
+
+== Lab
+
+* Go back to **JS Console** browser tab and click on **Logout**
+image:2020-05-27-15-44-40.png[]
+* Switch back to **Red Hat Single Sign On** and click on **Realm Settings** right bellow the **Realm Name (Demo)** and select *Login;*
+* Enable *User Registration*
+* Click on **Save**
+image:2020-05-27-15-46-25.png[]
+* On **JS Console** browser tab click on **Login** button;
+image:2020-05-27-15-41-32.png[]
+* Click on **Register** and create a new user informing all required fields;
+image:2020-05-27-15-48-00.png[]
+image:2020-05-27-15-49-00.png[]
+* if you experience session issues with other users, considering open a new browser instance or an incognito tab;
+
+== Authentication Reference
+
+* https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.4/html-single/server_administration_guide/index#authentication-flows
