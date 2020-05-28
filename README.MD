@@ -58,7 +58,7 @@ TERMINAL_URL=https://terminal-terminal.apps.cluster-brasilia-d6ec.brasilia-d6ec.
 OPENSHIFT_API_URL=https://api.cluster-brasilia-da5c.brasilia-da5c.example.opentlc.com:6443
 
 oc new-project workshopper --display-name="Workshopper"
-oc new-app docker.io/osevg/workshopper --name=workshopper \
+oc new-app quay.io/jamesfalkner/workshopper --name=workshopper \
       -e WORKSHOPS_URLS="$WORKSHOP_URL" \
       -e ISSUES_URL=$ISSUES_URL \
       -e OPENSHIFT_MASTER_URL=$MASTER_URL \

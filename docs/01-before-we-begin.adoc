@@ -25,6 +25,16 @@ user10=Luke Skywalker (luke.skywalker@starwars.com - Jedi)
 
 If the user already has a name on the front it means that someone has already chosen it. In that case choose another one that is available.
 
+As soon as you choose your username, add it at the top so that all guides reflect this change.
+
+image:May-28-2020-17-10-12.gif[] 
+
+After doind that, you will see that the user below will change. That will happen on all labs.
+
+----
+User = {{ USER_ID }}
+----
+
 === Web Console
 
 Openshift comes with a web console that will allow users to perform various tasks via the browser. To access the console, open the following URL:
@@ -36,8 +46,8 @@ To log in use the user previously chosen and the password provided by the instru
 
 [source,text]
 ----
-Username: userXX
-Password: xxxx
+Username: {{ USER_ID }}
+Password: openshift
 ----
 
 [[linha-de-comando]]

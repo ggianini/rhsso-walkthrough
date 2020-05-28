@@ -30,7 +30,7 @@ You can run Red Hat SSO locally or using containers on Openshift. Choose one of 
 
 First, we need to login on Openshift.
 
-* Username: userXX (where XX is your specific number)
+* Username: {{ USER_ID }}
 * Password: `openshift`
 
 image:2020-05-27-17-41-42.png[image]
