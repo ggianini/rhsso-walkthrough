@@ -25,7 +25,7 @@ user10=Luke Skywalker (luke.skywalker@starwars.com - Jedi)
 
 If the user already has a name on the front it means that someone has already chosen it. In that case choose another one that is available.
 
-=== A Web Console
+=== Web Console
 
 Openshift comes with a web console that will allow users to perform various tasks via the browser. To access the console, open the following URL:
 
@@ -42,7 +42,7 @@ Password: xxxx
 
 
 [[linha-de-comando]]
-=== Linha de comando
+=== Command line
 
 
 If you want, you can use a terminal that runs in the web browser. To do this, use `Google Chrome` or` Firefox`. Don't even think about using Microsoft Edge please;)
