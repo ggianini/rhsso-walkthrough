@@ -81,7 +81,7 @@ image:May-27-2020-18-20-04.gif[]
 
 All steps that were executed above, could be done using the following commands
 
-NOTE: You should execute the commands below only if you skipped all steps from [lab 1](#1-starting-rhsso-and-js-console-app)
+NOTE: You should execute the commands below only if you skipped all steps from lab 2
 
 
 [source,bash]

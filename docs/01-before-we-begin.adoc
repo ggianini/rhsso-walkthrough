@@ -1,15 +1,54 @@
 = Before we begin
-:imagesdir: imgs
+:imagesdir: images
 :toc:
 :toc-title: Content
 :linkattrs:
 
 == Instructions
 
-During the labs, you will need the Openshift and Etherpad URL:
+=== Etherpad
 
-* The instructor must provide these URLs
+Etherpad is a shared notepad. We will use it to share content and also control the user of each student.
 
-Save the Openshift and Etherpad URL as you are going to need them in the labs.
+Before continuing, access the Etherpad through the link below:
 
-A number will be assign to your user. On the next labs, everytime you see `userXX` replace `XX` with your number.
+{{ ETHERPAD_URL }}[Etherpad,window="_blank"]
+
+Choose a user from the predefined ones and put your `name`,` email` and `title` in front to indicate your choice. This account will be used by you throughout the test drive. For example:
+
+[source,text]
+----
+...
+user10=Luke Skywalker (luke.skywalker@starwars.com - Jedi)
+...
+----
+
+If the user already has a name on the front it means that someone has already chosen it. In that case choose another one that is available.
+
+=== A Web Console
+
+Openshift comes with a web console that will allow users to perform various tasks via the browser. To access the console, open the following URL:
+
+{{ OPENSHIFT_MASTER_URL }}[Web Console,window="_blank"]
+
+The first screen you will see is the authentication screen. You will be asked for your username and password. +
+To log in use the user previously chosen and the password provided by the instructor:
+
+[source,text]
+----
+Username: userXX
+Password: xxxx
+----
+
+
+[[linha-de-comando]]
+=== Linha de comando
+
+
+If you want, you can use a terminal that runs in the web browser. To do this, use `Google Chrome` or` Firefox`. Don't even think about using Microsoft Edge please;)
+
+The link for the terminal is below:
+
+{{ TERMINAL_URL }}[Terminal,window="_blank"]
+
+To access the terminal, you need to log into Openshift with the chosen user on Etherpad. The instructor will advise you on the password.

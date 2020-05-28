@@ -14,7 +14,7 @@ Clients are entities that can request Red Hat Single Sign-On to authenticate a u
 * Click on *Create* button on the right corner
 image:2020-05-27-15-17-10.png[]
 * On the *Client ID* textfield, use: *js-console*
-* Inform the *Root URL*: Paste the URL from **js-console** that you generate on [Lab 2](#2-create-rhsso-realm)
+* Inform the *Root URL*: Paste the URL from **js-console** that you got on Lab 2
 * Click on **Save** button
 image:2020-05-27-15-27-09.png[]
 
