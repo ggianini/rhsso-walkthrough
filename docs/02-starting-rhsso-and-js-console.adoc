@@ -35,7 +35,7 @@ First, we need to login on Openshift.
 
 image:2020-05-27-17-41-42.png[image]
 
-Make sure you are in the `Developer perspective` and in the namespace sso`XX`.
+Make sure you are in the `Developer perspective` and in the namespace `ssoXX`.
 
 image:2020-05-27-17-43-31.png[]
 
@@ -47,8 +47,10 @@ image:2020-05-27-17-45-54.png[]
 image:2020-05-27-17-55-58.png[]
 * Click on `Instantiatee Template`
 image:2020-05-27-17-56-28.png[]
-* Leave the fields as they are and just change both `RH-SSO Administrator Username` and `RH-SSO Administrator Password` to `admin`
+* Leave the fields as they are and just change `RH-SSO Administrator Username` and `RH-SSO Administrator Password` to `admin`.
 image:2020-05-27-17-57-10.png[]
+* Click on `Create` at the bottom of the page
+image:4-5-2020-14-56-26-PM.png[] 
 * Wait while Openshift pull the necessary images for Red Hat SSO. When it has finished, you'll see the following screen
 image:2020-05-27-17-58-50.png[]
 
@@ -63,12 +65,16 @@ image:2020-05-27-18-03-23.png[]
 * Now click on `Create`
 * Click on the SSO circle and then on the resources tab, copy the Route URL
 image:2020-05-27-18-07-42.png[]
-* Open the js-console Deployment by clicking on `js-console`
+* Open the js-console Deployment by clicking on the `js-console` in the upper right corner
 image:2020-05-27-18-09-38.png[]
-* Now select the `Environment` tab and create a new env `AUTH_SERVER_URL` and fill the value field with the content of the URL of SSO. In the end of the SSO URL, add `/auth`. Now click on `Save`
+* Now select the `Environment` tab and create a new env `AUTH_SERVER_URL` and fill the value field with the content of the URL of SSO (it's probably in your clipboard). Append `/auth` to the end of the url. Now click on `Save`
 image:2020-05-27-18-12-51.png[]
-* Switch back to the topology view and Open the js-console app by clicking on the icon
+* Switch back to the topology view
+image:4-5-2020-15-03-33-PM.png[] 
+* Now open the js-console app by clicking on the icon
 image:2020-05-27-18-14-57.png[]
+* You should see the following screen. Leave it open.
+image:4-5-2020-15-08-26-PM.png[] 
 
 === Grouping js-console and SSO
 
@@ -82,7 +88,6 @@ image:May-27-2020-18-20-04.gif[]
 All steps that were executed above, could be done using the following commands
 
 NOTE: You should execute the commands below only if you skipped all steps from lab 2
-
 
 [source,bash]
 ----

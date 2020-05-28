@@ -10,8 +10,7 @@ Roles identify a type or category of user. Admin, user, manager, and employee ar
 
 == Lab
 
-* Click on **Roles** right bellow the **Client Templates** at the left menu;
-* Click on *Add Role* button
+* Click on **Roles** right bellow the **Client Scopes** at the left menu. Next add a new role by cliking on *Add Role* button
 image:2020-05-27-15-29-33.png[]
 * For the *Role Name* inform `realm-role` as value and click on **Save** button afterward
 image:2020-05-27-15-30-31.png[]
@@ -23,13 +22,14 @@ image:2020-05-27-15-32-00.png[]
 image:2020-05-27-15-32-32.png[]
 * For the *Role Name* inform `client-role` and afterwards **Save** button
 image:2020-05-27-15-33-05.png[]
-* Click on **Roles** again;
-* Select *Default Roles;*
+* Click on **Roles** again and select *Default Roles;*
 image:2020-05-27-15-33-49.png[]
 * Select `realm-role` from *Available Roles* list and click on **Add Selected**
 image:2020-05-27-15-34-38.png[]
 * In the *Client Roles* select **js-console** and click on **Add Selected**
 image:2020-05-27-15-35-42.png[]
+* Your screen should be like this
+image:4-5-2020-16-03-52-PM.png[]
 
 == Roles Reference
 

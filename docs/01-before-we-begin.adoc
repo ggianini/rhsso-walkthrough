@@ -14,7 +14,7 @@ Before continuing, access the Etherpad through the link below:
 
 {{ ETHERPAD_URL }}[Etherpad,window="_blank"]
 
-Choose a user from the predefined ones and put your `name`,` email` and `title` in front to indicate your choice. This account will be used by you throughout the test drive. For example:
+Choose a user from the predefined ones and put your `name`, `email` and `job title` in front to indicate your choice. This account will be used by you throughout the test drive. For example:
 
 [source,text]
 ----
@@ -40,10 +40,8 @@ Username: userXX
 Password: xxxx
 ----
 
-
 [[linha-de-comando]]
 === Command line
-
 
 If you want, you can use a terminal that runs in the web browser. To do this, use `Google Chrome` or` Firefox`. Don't even think about using Microsoft Edge please;)
 

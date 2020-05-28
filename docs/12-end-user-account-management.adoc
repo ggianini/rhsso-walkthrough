@@ -13,6 +13,8 @@ Red Hat Single Sign-On has a built-in User Account Service which every user has 
 image:2020-05-27-17-30-08.png[]
 * Navigate through the options and update your profile if desired;
 
+image:4-5-2020-16-19-29-PM.png[] 
+
 == Account Management Reference
 
 * https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.4/html-single/server_administration_guide/index#account-service

@@ -10,8 +10,7 @@ Users are entities that are able to log into your system. They can have attribut
 
 == Lab
 
-* Click on **Users** right bellow the **Groups** at the left menu;
-* Click on *Add User* button;
+* Click on **Users** right bellow the **Groups** at the left menu. Add a new user by clicking on *Add User* button;
 image:2020-05-27-15-36-57.png[]
 * Inform the *Username* `myuser` and click on **Save** button;
 image:2020-05-27-15-38-27.png[]
