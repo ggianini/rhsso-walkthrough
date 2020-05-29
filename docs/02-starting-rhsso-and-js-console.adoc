@@ -6,6 +6,8 @@
 
 You can run Red Hat SSO locally or using containers on Openshift. Choose one of the option below.
 
+NOTE: If you have any doubt about which option to choose, talk to your instructor.
+
 == Option 1: Locally
 
 * Execute *docker pull* to download both **Red Hat Single Sign On** and **JS Console:**
@@ -30,64 +32,120 @@ You can run Red Hat SSO locally or using containers on Openshift. Choose one of 
 
 First, we need to login on Openshift.
 
+{{ OPENSHIFT_MASTER_URL }}[Openshift Web Console,window="_blank"]
+
 * Username: {{ USER_ID }}
 * Password: `openshift`
 
-image:2020-05-27-17-41-42.png[image]
+image::2020-05-27-17-41-42.png[image]
 
 Make sure you are in the `Developer perspective` and in the namespace `ssoXX`.
 
-image:2020-05-27-17-43-31.png[]
+image::2020-05-27-17-43-31.png[]
 
 === Deploy SSO
 
 * Click on `+Add` -> `From Catalog`
-image:2020-05-27-17-45-54.png[]
+
+image::2020-05-27-17-45-54.png[]
+
 * Search for `sso` in the filter field and select `Red Hat Single Sign-On 7.3 (Ephemeral)`
-image:2020-05-27-17-55-58.png[]
+
+image::2020-05-27-17-55-58.png[]
+
 * Click on `Instantiatee Template`
-image:2020-05-27-17-56-28.png[]
+
+image::2020-05-27-17-56-28.png[]
+
 * Leave the fields as they are and just change `RH-SSO Administrator Username` and `RH-SSO Administrator Password` to `admin`.
-image:2020-05-27-17-57-10.png[]
+
+image::2020-05-27-17-57-10.png[]
+
 * Click on `Create` at the bottom of the page
-image:4-5-2020-14-56-26-PM.png[] 
+
+image::4-5-2020-14-56-26-PM.png[]
+
 * Wait while Openshift pull the necessary images for Red Hat SSO. When it has finished, you'll see the following screen
-image:2020-05-27-17-58-50.png[]
+
+image::2020-05-27-17-58-50.png[]
 
 === Deploy js-console
 
 * On the left menu, click on `+Add` -> `Container Image`
-image:2020-05-27-18-00-20.png[]
+
+image::2020-05-27-18-00-20.png[]
+
 * Use `docker.io/luszczynski/rhsso-js-console-app:1.0` in the `Image name from external registry` field
 * Application Name: `redhat-sso`
 * Name: `js-console`
-image:2020-05-27-18-03-23.png[]
+
+image::2020-05-27-18-03-23.png[]
+
 * Now click on `Create`
 * Click on the SSO circle and then on the resources tab, copy the Route URL
-image:2020-05-27-18-07-42.png[]
+
+image::2020-05-27-18-07-42.png[]
+
 * Open the js-console Deployment by clicking on the `js-console` in the upper right corner
-image:2020-05-27-18-09-38.png[]
+
+image::2020-05-27-18-09-38.png[]
+
 * Now select the `Environment` tab and create a new env `AUTH_SERVER_URL` and fill the value field with the content of the URL of SSO (it's probably in your clipboard). Append `/auth` to the end of the url. Now click on `Save`
-image:2020-05-27-18-12-51.png[]
+
+image::2020-05-27-18-12-51.png[]
+
 * Switch back to the topology view
-image:4-5-2020-15-03-33-PM.png[] 
+
+image::4-5-2020-15-03-33-PM.png[]
+
 * Now open the js-console app by clicking on the icon
-image:2020-05-27-18-14-57.png[]
+
+image::2020-05-27-18-14-57.png[]
+
 * You should see the following screen. Leave it open.
-image:4-5-2020-15-08-26-PM.png[] 
+
+image::4-5-2020-15-08-26-PM.png[]
+
+=== Deploy MailHog
+
+* On the left menu, click on `+Add` -> `Container Image`
+
+image::2020-05-27-18-00-20.png[]
+
+Use `mailhog/mailhog` in the `Image name from external registry` field
+
+* Application Name: `redhat-sso`
+* Name: `mailhog`
+
+image::5-5-2020-15-06-54-PM.png[]
+
+* Scroll down and click on `Routing` in the advanced options section
+
+image::5-5-2020-15-09-13-PM.png[]
+
+* On `Target Port`, set the field to `8025 -> 8025 (TCP)` and click on `Create`
+
+image::5-5-2020-15-28-04-PM.png[]
 
 === Grouping js-console and SSO
 
 * While holding down `Shift`, drag the SSO circle near to the js-console
-image:May-27-2020-18-15-58.gif[]
+
+image::May-27-2020-18-15-58.gif[]
+
 * Now create a connection between js-console and sso by pulling an arrow from js-console towards sso circle
-image:May-27-2020-18-20-04.gif[]
+
+image::May-27-2020-18-20-04.gif[]
+
+* Repeat the same process to create a connection from `sso` to `mailhog`. You topology should look like this
+
+image::5-5-2020-15-31-37-PM.png[]
 
 === Using the CLI
 
 All steps that were executed above, could be done using the following commands
 
-NOTE: You should execute the commands below only if you skipped all steps from lab 2
+NOTE: You should execute the commands below only if you skipped all steps above.
 
 [source,bash]
 ----
@@ -108,10 +166,17 @@ oc new-app \
     --name=js-console \
     -n sso${userNumber}
 
+  oc new-app \
+    mailhog/mailhog \
+    --name=mailhog \
+    -n sso${userNumber}
+
   oc expose svc js-console -n sso${userNumber}
+  oc expose svc mailhog --target-port=8025-tcp -n sso${userNumber}
 
   oc label dc js-console app.kubernetes.io/part-of="redhat-sso" -n sso${userNumber}
   oc label dc sso app.kubernetes.io/part-of="redhat-sso" -n sso${userNumber}
-  oc annotate svc js-console app.openshift.io/connects-to=sso73-x509-https -n sso${userNumber}
+  oc label dc mailhog app.kubernetes.io/part-of="redhat-sso" -n sso${userNumber}
   oc annotate dc js-console app.openshift.io/connects-to=sso73-x509-https -n sso${userNumber}
+  oc annotate dc sso app.openshift.io/connects-to=mailhog -n sso${userNumber}
 ----
