@@ -1,0 +1,27 @@
+= Configuring Email
+:imagesdir: images
+:toc:
+:toc-title: Content
+:linkattrs:
+
+== Configure SSO to Send Email
+
+* Go to `Realm Settings`, on the tab `Email`, and fill in the field
+** Host: `mailhog`
+** Port: `1025`
+** From: `keycloak@localhost`
+* Click on `Save`
+
+image::5-5-2020-16-30-41-PM.png[]
+
+== Acessing your email
+
+* Open MailHog using the Openshift Web Console
+
+image:5-5-2020-17-16-19-PM.png[]
+
+* You should see the MailHog screen
+
+image:5-5-2020-17-26-58-PM.png[]
+
+* Leave the mailhog page open as we are going to use it later

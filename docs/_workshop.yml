@@ -17,15 +17,16 @@ vars:
 
 modules:
   activate:
-  - 01-before-we-begin
-  - 02-starting-rhsso-and-js-console
-  - 03-create-rhsso-realm
-  - 04-create-rhsso-client-app
-  - 05-create-rhsso-roles
-  - 06-create-rhsso-user
-  - 07-enable-signup
-  - 08-change-themes
-  - 09-user-required-actions
-  - 10-social-login
-  - 11-two-factor-with-otp
-  - 12-end-user-account-management
+  - getting-started
+  - starting-rhsso-and-js-console
+  - create-rhsso-realm
+  - configuring-email
+  - create-rhsso-client-app
+  - create-rhsso-roles
+  - create-rhsso-user
+  - enable-signup
+  - change-themes
+  - user-required-actions
+  - social-login
+  - two-factor-with-otp
+  - end-user-account-management
