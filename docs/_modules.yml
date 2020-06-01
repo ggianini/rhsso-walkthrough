@@ -28,6 +28,9 @@ modules:
   enable-signup:
     name: "Enable SignUp"
     vars: 
+  user-federation:
+    name: "User Federation"
+    vars:
   change-themes:
     name: "Change Themes"
   user-required-actions:
