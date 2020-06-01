@@ -8,12 +8,16 @@
 
 Red Hat Single Sign-On has a built-in User Account Service which every user has access to. This service allows users to manage their account, change their credentials, update their profile, and view their login sessions. The URL to this service is <server-root>/auth/realms/{realm-name}/account.
 
+== Lab
+
 * On **Red Hat Single Sign On** browser tab, click on **Clients** right bellow the **Realm Settings** at the left menu;
 * Now click on the Account Base URL link
-image:2020-05-27-17-30-08.png[]
+
+image::2020-05-27-17-30-08.png[]
+
 * Navigate through the options and update your profile if desired;
 
-image:4-5-2020-16-19-29-PM.png[] 
+image::4-5-2020-16-19-29-PM.png[]
 
 == Account Management Reference
 

@@ -11,15 +11,22 @@ Every screen provided by Red Hat Single Sign-On is backed by a theme. Themes def
 == Lab
 
 * Go to **JS Console** browser tab and click on **Logout;**
-image:2020-05-27-15-44-40.png[]
+
+image::2020-05-27-15-44-40.png[]
+
 * On **Red Hat Single Sign On** browser tab, click **Realm Settings** and select **Themes** tab;
 * Select theme `keycloak` from **Login Theme** dropdown list;
 * Click on **Save;**
-image:2020-05-27-15-54-25.png[]
+
+image::2020-05-27-15-54-25.png[]
+
 * Go back to **JS Console** browser tab and click on **Login;**
-image:2020-05-27-15-41-32.png[]
+
+image::2020-05-27-15-41-32.png[]
+
 * Notice  a different look'n'feel from **Red Hat Single Sign On** login page;
-image:2020-05-27-15-54-49.png[]
+
+image::2020-05-27-15-54-49.png[]
 
 == Themes Reference
 

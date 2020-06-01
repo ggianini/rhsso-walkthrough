@@ -26,6 +26,7 @@ NUMBER_OF_USERS=5
 
 for userNumber in $(seq 1 $NUMBER_OF_USERS); do
   oc adm new-project sso${userNumber} --admin=user${userNumber}
+  oc adm policy add-scc-to-user anyuid -z default -n sso${userNumber}
 done
 ```
 
@@ -39,6 +40,8 @@ To install etherpad, please check https://github.com/luszczynski/openshift-ether
 
 ##### Local
 
+To test the documentation, run
+
 ```bash
 docker run -it --rm -p 8080:8080 -v $(pwd)/docs:/app-data \
               -e CONTENT_URL_PREFIX="file:///app-data" \
@@ -47,9 +50,11 @@ docker run -it --rm -p 8080:8080 -v $(pwd)/docs:/app-data \
               quay.io/jamesfalkner/workshopper
 ```
 
+Now open http://localhost:8080
+
 ##### Openshift
 
-To test the documentation, run
+To deploy the documentation on Openshift, run
 
 ```bash
 WORKSHOP_URL=https://raw.githubusercontent.com/luszczynski/rhsso-walkthrough/master/docs/_workshop.yml

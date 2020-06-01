@@ -1,0 +1,79 @@
+= User Federation
+:imagesdir: images
+:toc:
+:toc-title: Content
+:linkattrs:
+
+== Intro to User Federation
+
+Red Hat Single Sign-On can store and manage users. Often, companies already have LDAP or Active Directory services that store user and credential information. You can point Red Hat Single Sign-On to validate credentials from those external stores and pull in identity information.
+
+== Lab
+
+=== Deploy LDAP
+
+* On the left menu, click on `+Add` -> `Container Image`
+
+image::2020-05-27-18-00-20.png[]
+
+* Use `docker.io/luszczynski/rhsso-ldap:1.0` in the `Image name from external registry` field
+* Application Name: `redhat-sso`
+* Name: `ldap`
+
+image::1-6-2020-17-04-21-PM.png[]
+
+* Unset `Create a route to the application`
+* Now click on `Create`
+
+image::1-6-2020-17-05-59-PM.png[]
+
+* You should see now four application on your Openshift.
+
+image::1-6-2020-17-15-39-PM.png[]
+
+* Now create a connection between ldap and sso by pulling an arrow from sso towards ldap circle
+
+image::Jun-01-202017-19-02.gif[]
+
+* You screen should look like this
+
+image::1-6-2020-17-27-18-PM.png[]
+
+=== Configure SSO
+
+* Click on `User Federation`, select `ldap` from the drop-down. 
+
+image::1-6-2020-18-31-14-PM.png[]
+
+Fill in the following values:
+
+* Edit Mode: `WRITABLE`
+* Vendor: `other`
+* UUID LDAP attribute: `entryUUID`
+* Connection URL: `ldap://demo-ldap:389`
+* Users DN: `ou=People,dc=example,dc=org`
+* Bind DN: `cn=admin,dc=example,dc=org`
+* Bind Credential: `admin`
+* Trust Email: `ON`
+
+image::1-6-2020-18-50-22-PM.png[]
+
+* Click on `Save` button
+
+image::1-6-2020-18-50-56-PM.png[]
+
+* On the bottom of the page click on `Syncronize all users`
+
+image::1-6-2020-18-51-45-PM.png[]
+
+* Now go to the `Users` on the left menu
+
+image::1-6-2020-18-52-18-PM.png[]
+
+* And click `View all users`
+
+image::1-6-2020-18-53-11-PM.png[]
+
+== User Federation Reference
+
+* https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.4/html-single/server_administration_guide/index#user-storage-federation
