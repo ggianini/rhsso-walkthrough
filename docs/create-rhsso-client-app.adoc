@@ -12,12 +12,21 @@ Clients are entities that can request Red Hat Single Sign-On to authenticate a u
 
 * Click on *Clients* right bellow the *Realm Settings* at the left menu
 * Click on *Create* button on the right corner
-image:2020-05-27-15-17-10.png[]
+
+image::2020-05-27-15-17-10.png[]
+
 * On the *Client ID*, use: *js-console*
-* Inform the *Root URL*: Paste the URL from **js-console** that you got on Lab 2. Or you can just copy from the js-console open tab.
-image:4-5-2020-15-57-37-PM.png[] 
+* Inform the *Root URL*: You can copy it from the js-console open tab.
+
+image::4-5-2020-15-57-37-PM.png[]
+
 * Click on **Save** button
-image:2020-05-27-15-27-09.png[]
+
+image::2020-05-27-15-27-09.png[]
+
+* You should see the following screen
+
+image::1-6-2020-15-25-24-PM.png[]
 
 == Client Reference
 

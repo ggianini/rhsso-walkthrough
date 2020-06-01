@@ -11,17 +11,47 @@ Authentication flows are work flows a user must perform when interacting with ce
 == Lab
 
 * Go back to **JS Console** browser tab and click on **Logout**
-image:2020-05-27-15-44-40.png[]
+
+image::2020-05-27-15-44-40.png[]
+
 * Switch back to **Red Hat Single Sign On** and click on **Realm Settings** right bellow the **Realm Name (Demo)** and select *Login;*
-* Enable *User Registration*
+* Enable *User Registration* and **Verify Email**
 * Click on **Save**
-image:2020-05-27-15-46-25.png[]
+
+image::1-6-2020-15-41-02-PM.png[]
+
 * On **JS Console** browser tab click on **Login** button;
-image:2020-05-27-15-41-32.png[]
+
+image::2020-05-27-15-41-32.png[]
+
 * Click on **Register** and create a new user informing all required fields;
-image:2020-05-27-15-48-00.png[]
-image:2020-05-27-15-49-00.png[]
-* if you experience session issues with other users, considering open a new browser instance or an incognito tab;
+
+image::2020-05-27-15-48-00.png[]
+image::2020-05-27-15-49-00.png[]
+
+* Now you will need to verify you email.
+
+image::1-6-2020-15-43-42-PM.png[]
+
+* Open the mailhog url
+
+image::1-6-2020-15-45-19-PM.png[]
+
+* Click on the unread email to open it
+
+image::1-6-2020-15-45-58-PM.png[]
+
+* Click on the link inside the email to confirm your email address
+
+image::1-6-2020-15-46-42-PM.png[]
+
+* You should be redirect to the js-console
+
+image::1-6-2020-15-49-43-PM.png[]
+
+NOTE: If for some reason your link has expired, login again on SSO using your email and password and the click on Resend Link
+
+image::1-6-2020-15-49-24-PM.png[]
 
 == Authentication Reference
 

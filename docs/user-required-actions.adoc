@@ -10,15 +10,25 @@ Required Actions are tasks that a user must finish before they are allowed to lo
 
 == Lab
 
-* Click on **Users** right bellow the **Groups** at the left menu;
+* Logout from js-console
+
+image::2020-05-27-15-44-40.png[]
+
+* On SSO, click on **Users** right bellow the **Groups** at the left menu;
 * Click on *View all users* button and select one;
 * Select an user by clicking on *Edit*;
-image:2020-05-27-16-47-02.png[]
+
+image::2020-05-27-16-47-02.png[]
+
 * Select `Update Password` action on **Required User Actions** menu;
 * Click on **Save**
-image:2020-05-27-16-49-28.png[]
-* Try to login with this user and now you'll have to execute the *Required Actions* previously configured;
-image:2020-05-27-16-50-18.png[]
+
+image::2020-05-27-16-49-28.png[]
+
+* Try to login with `myuser` and now you'll have to execute the *Required Actions* previously configured;
+
+image::2020-05-27-15-41-32.png[]
+image::2020-05-27-16-50-18.png[]
 
 == Required Actions Reference
 

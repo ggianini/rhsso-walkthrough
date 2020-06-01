@@ -15,15 +15,31 @@ We recommend that you do not use the master realm to manage the users and applic
 == Lab
 
 * From now on, save the SSO URL. You will use it in all labs. To find this URL, click on the `Open URL` icon
-image:2020-05-28-07-50-20.png[]
+
+image::2020-05-28-07-50-20.png[]
+
 * Repeat the step above to `js-console` application. You will also need this URL for the next labs.
-image:2020-05-28-07-53-33.png[]
+
+image::2020-05-28-07-53-33.png[]
+
+* After opening the SSO URL, click on `Administration Console`
+
+image::4-5-2020-15-38-53-PM.png[]
+
+* Log in using
+** Username: admin
+** Pass: admin
+
+image::1-6-2020-15-20-31-PM.png[] 
+
 * Go to the **Red Hat Single Sign On** browser tab and place the mouse on the left top corner, right above the *Master*. Click on the arrow button and select **Add Realm**
-image:4-5-2020-15-38-53-PM.png[]
-image:2020-05-27-15-15-17.png[]
+
+image::2020-05-27-15-15-17.png[]
+
 * In the *name* textfield use: *demo*
 * Click on *Create* button
-image:2020-05-27-15-15-58.png[]
+
+image::2020-05-27-15-15-58.png[]
 
 == Realm Reference
 

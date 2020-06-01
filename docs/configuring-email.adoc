@@ -6,7 +6,7 @@
 
 == Configure SSO to Send Email
 
-* Go to `Realm Settings`, on the tab `Email`, and fill in the field
+* Go to `Realm Settings`, on the tab `Email`, and fill in the fields
 ** Host: `mailhog`
 ** Port: `1025`
 ** From: `keycloak@localhost`

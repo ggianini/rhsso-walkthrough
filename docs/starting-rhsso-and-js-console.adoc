@@ -51,9 +51,9 @@ image::2020-05-27-17-45-54.png[]
 
 * Search for `sso` in the filter field and select `Red Hat Single Sign-On 7.3 (Ephemeral)`
 
-image::2020-05-27-17-55-58.png[]
+image::1-6-2020-15-03-21-PM.png[]
 
-* Click on `Instantiatee Template`
+* Click on `Instantiate Template`
 
 image::2020-05-27-17-56-28.png[]
 
@@ -90,7 +90,10 @@ image::2020-05-27-18-07-42.png[]
 
 image::2020-05-27-18-09-38.png[]
 
-* Now select the `Environment` tab and create a new env `AUTH_SERVER_URL` and fill the value field with the content of the URL of SSO (it's probably in your clipboard). Append `/auth` to the end of the url. Now click on `Save`
+* Now select the `Environment` tab and create a new env `AUTH_SERVER_URL` and fill the value field with the content of the URL of SSO (it's probably in your clipboard)
+* Append `/auth` to the end of the url. Now click on `Save`
+
+WARNING: Do not forget to append `auth` at the end of the URL
 
 image::2020-05-27-18-12-51.png[]
 
@@ -102,7 +105,7 @@ image::4-5-2020-15-03-33-PM.png[]
 
 image::2020-05-27-18-14-57.png[]
 
-* You should see the following screen. Leave it open.
+* You should see the following screen. Leave it open as we are going to use it later.
 
 image::4-5-2020-15-08-26-PM.png[]
 
