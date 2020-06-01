@@ -35,6 +35,8 @@ To install etherpad, please check https://github.com/luszczynski/openshift-ether
 
 #### Documentation
 
+![](docs/images/2020-06-01-14-43-12.png)
+
 ##### Local
 
 ```bash
@@ -47,7 +49,7 @@ docker run -it --rm -p 8080:8080 -v $(pwd)/docs:/app-data \
 
 ##### Openshift
 
-To create documenation, run
+To test the documentation, run
 
 ```bash
 WORKSHOP_URL=https://raw.githubusercontent.com/luszczynski/rhsso-walkthrough/master/docs/_workshop.yml
