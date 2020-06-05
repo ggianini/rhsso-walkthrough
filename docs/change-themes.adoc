@@ -28,6 +28,8 @@ image::2020-05-27-15-41-32.png[]
 
 image::2020-05-27-15-54-49.png[]
 
+* Login again using `myuser` and `mypass` as credentials.
+
 == Themes Reference
 
 * https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.4/html-single/server_administration_guide/index#themes

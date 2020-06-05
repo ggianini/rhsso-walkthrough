@@ -16,7 +16,7 @@ image::2020-05-27-15-44-40.png[]
 
 * On SSO, click on **Users** right bellow the **Groups** at the left menu;
 * Click on *View all users* button and select one;
-* Select an user by clicking on *Edit*;
+* Edit `myuser` by clicking on *Edit*;
 
 image::2020-05-27-16-47-02.png[]
 
@@ -28,7 +28,10 @@ image::2020-05-27-16-49-28.png[]
 * Try to login with `myuser` and now you'll have to execute the *Required Actions* previously configured;
 
 image::2020-05-27-15-41-32.png[]
+image::2020-05-27-15-42-49.png[]
 image::2020-05-27-16-50-18.png[]
+
+* Set the password again to `mypass`
 
 == Required Actions Reference
 

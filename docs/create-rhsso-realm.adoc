@@ -22,15 +22,17 @@ image::2020-05-28-07-50-20.png[]
 
 image::2020-05-28-07-53-33.png[]
 
-* After opening the SSO URL, click on `Administration Console`
+* After opening the SSO URL, accept the certificates and click on `Administration Console`
+
+image::5-6-2020-11-35-24-AM.png[]
 
 image::4-5-2020-15-38-53-PM.png[]
 
 * Log in using
-** Username: admin
-** Pass: admin
+** Username: `admin`
+** Pass: `admin`
 
-image::1-6-2020-15-20-31-PM.png[] 
+image::1-6-2020-15-20-31-PM.png[]
 
 * Go to the **Red Hat Single Sign On** browser tab and place the mouse on the left top corner, right above the *Master*. Click on the arrow button and select **Add Realm**
 

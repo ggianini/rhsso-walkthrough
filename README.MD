@@ -2,7 +2,7 @@
 
 ## Description
 
-This demo showcase a step-by-step guide covering basic capabilities from [Red Hat Single Sign ON](https://access.redhat.com/products/red-hat-single-sign-on) using a simple application js-console.
+The purpose of this workshop is to show a step-by-step hands-on covering basic capabilities from [Red Hat Single Sign ON](https://access.redhat.com/products/red-hat-single-sign-on) using a sample application [js-console](https://github.com/keycloak/keycloak/tree/master/examples/js-console)
 
 ![](docs/images/2020-05-27-15-00-27.png)
 
@@ -26,6 +26,8 @@ NUMBER_OF_USERS=5
 
 for userNumber in $(seq 1 $NUMBER_OF_USERS); do
   oc adm new-project sso${userNumber} --admin=user${userNumber}
+
+  # For now, ldap container requires root. See issue #1
   oc adm policy add-scc-to-user anyuid -z default -n sso${userNumber}
 done
 ```
@@ -40,7 +42,7 @@ To install etherpad, please check https://github.com/luszczynski/openshift-ether
 
 ##### Local
 
-To test the documentation, run
+To test the documentation locally, run
 
 ```bash
 docker run -it --rm -p 8080:8080 -v $(pwd)/docs:/app-data \
@@ -54,11 +56,14 @@ Now open http://localhost:8080
 
 ##### Openshift
 
-To deploy the documentation on Openshift, run
+To deploy the documentation on Openshift, run:
 
 ```bash
+# Usually there is no need to change these vars
 WORKSHOP_URL=https://raw.githubusercontent.com/luszczynski/rhsso-walkthrough/master/docs/_workshop.yml
 ISSUES_URL=https://github.com/luszczynski/rhsso-walkthrough/issues
+
+# Change these vars according to your environment
 MASTER_URL=https://console-openshift-console.apps.cluster-brasilia-d6ec.brasilia-d6ec.example.opentlc.com/
 ETHERPAD_URL=http://etherpad-etherpad.apps.cluster-brasilia-d6ec.brasilia-d6ec.example.opentlc.com/p/workshop
 TERMINAL_URL=https://terminal-terminal.apps.cluster-brasilia-d6ec.brasilia-d6ec.example.opentlc.com/
@@ -76,5 +81,3 @@ oc new-app quay.io/jamesfalkner/workshopper --name=workshopper \
 
 oc expose svc/workshopper -n workshopper
 ```
-
-Here you can see [full documentation](docs.md)
