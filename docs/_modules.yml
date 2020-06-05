@@ -45,3 +45,6 @@ modules:
   end-user-account-management:
     name: "Account Management"
     vars: 
+  auditing-events:
+    name: "Auditing and Events"
+    vars: 

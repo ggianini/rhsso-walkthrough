@@ -31,3 +31,4 @@ modules:
   - social-login
   - two-factor-with-otp
   - end-user-account-management
+  - auditing-events

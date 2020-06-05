@@ -1,0 +1,31 @@
+= Auditing and Events
+:imagesdir: images
+:toc:
+:toc-title: Content
+:linkattrs:
+
+== Intro to Events
+
+Red Hat Single Sign-On provides a rich set of auditing capabilities. Every single login action can be recorded and stored in the database and reviewed in the Admin Console. All admin actions can also be recorded and reviewed. There is also a Listener SPI with which plugins can listen for these events and perform some action. Built in listeners include a simple log file and the ability to send an email if an event occurs.
+
+== Lab
+
+* Go to `Events` on the left menu and then enable `Save Events` on the `Config` tab. Click `Save` on the bottom of the page.
+
+image::5-6-2020-12-36-07-PM.png[]
+
+* Now logout from js-console
+
+image::2020-05-27-15-44-40.png[]
+
+* And login again
+
+image::2020-05-27-15-41-32.png[]
+
+* Switch back to SSO and click again on `Events` and then on `Login Events`
+
+image::5-6-2020-12-55-03-PM.png[]
+
+== Auditing and Events Reference
+
+* https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.4/html-single/server_administration_guide/index#auditing_and_events
