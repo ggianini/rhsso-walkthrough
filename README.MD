@@ -6,9 +6,9 @@ The purpose of this workshop is to show a step-by-step hands-on covering basic c
 
 ![](docs/images/2020-05-27-15-00-27.png)
 
-js-console and Red Hat SSO running on Openshift.
+js-console, ldap, mailhog and Red Hat SSO running on Openshift.
 
-![](docs/images/2020-05-27-14-58-55.png)
+![](docs/images/2020-06-05-12-22-32.png)
 
 ## For instructor only
 
