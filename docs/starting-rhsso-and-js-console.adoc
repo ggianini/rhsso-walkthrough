@@ -156,7 +156,7 @@ NOTE: You should execute the commands below only if you skipped all steps above.
 userNumber=1
 
 oc new-app \
-    --template=sso73-x509-https \
+    --template=sso73-ocp4-x509-https \
     -p APPLICATION_NAME=sso \
     -p SSO_ADMIN_USERNAME=admin \
     -p SSO_ADMIN_PASSWORD=admin \
